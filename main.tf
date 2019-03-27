@@ -53,7 +53,9 @@ resource "azurerm_virtual_machine" "vm" {
 
   tags = {
     environment = "${var.env}"
+    vm-name = "${var.prefix}-vm${count.index}-${var.env}"
     ssh = "${data.azurerm_public_ip.lb-ip.ip_address}:2200${count.index}"
+    
   }
    
    connection {
