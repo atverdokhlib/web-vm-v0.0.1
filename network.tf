@@ -85,7 +85,7 @@ resource "azurerm_public_ip" "lbpip" {
   domain_name_label   = "${var.dnsforpubip}-lb"
 }
 
-resource "azurerm_public_ip" "main-ip" {
+/*resource "azurerm_public_ip" "main-ip" {
   count = "${var.vms_count}"
 
   name                = "${var.prefix}-pip${count.index}-${var.env}"
@@ -101,7 +101,7 @@ resource "azurerm_public_ip" "main-ip" {
     )
   )}"  
 }
-
+*/
 
 
 
