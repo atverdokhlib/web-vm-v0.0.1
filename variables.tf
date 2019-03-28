@@ -35,10 +35,10 @@ variable "password" {
 }
 
 variable "vnet" {
-  description = "Password for ssh description"
+  description = "Virtual network"
   
 }
 variable "vsubnet" {
-  description = "Password for ssh description"
+  description = "Lan subnet"
   
 }
