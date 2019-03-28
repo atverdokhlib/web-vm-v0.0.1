@@ -36,7 +36,7 @@ resource "azurerm_network_security_group" "mng-nsg" {
 
 resource "azurerm_virtual_network" "westeu-network" {
   name                = "${var.prefix}-network-${var.env}"
-  address_space       = ["10.0.0.0/16"]
+  address_space       = ["${var.vnet}"]
   location            = "${azurerm_resource_group.rsg.location}"
   resource_group_name = "${azurerm_resource_group.rsg.name}"
    tags = {
@@ -47,7 +47,7 @@ resource "azurerm_subnet" "lan-subnet" {
   name                 = "${var.prefix}-lan-${var.env}"
   resource_group_name  = "${azurerm_resource_group.rsg.name}"
   virtual_network_name = "${azurerm_virtual_network.westeu-network.name}"
-  address_prefix       = "10.0.1.0/24"
+  address_prefix       = "${var.vsubnet}"
   //network_security_group_id = "${azurerm_network_security_group.mng-nsg.id}"
   
    
